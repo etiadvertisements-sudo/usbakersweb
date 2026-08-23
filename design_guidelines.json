@@ -1,0 +1,121 @@
+{
+  "project_name": "US Bakers E-Commerce",
+  "brand": "US Bakers, Pathankot",
+  "theme": "light",
+  "theme_rationale": "A luxurious artisan bakery website needs a light, airy, elegant base (warm beige/off-white) to let the rich pinks and cake photography pop. High-contrast typography adds an editorial, magazine-like feel.",
+  "colors": {
+    "primary": "#C65D7B", 
+    "primary_hover": "#A94862",
+    "background": "#FDFBF7",
+    "surface": "#F6F1EA",
+    "text_primary": "#2D2022",
+    "text_secondary": "#5C4D50",
+    "accent": "#E4A7B5",
+    "border": "#E8DFD5"
+  },
+  "typography": {
+    "headings": "Cormorant Garamond",
+    "body": "Manrope",
+    "rationale": "Cormorant Garamond gives an ultra-premium, editorial, Awwwards-winning look for big kinetic typography. Manrope provides clean, geometric modernism for functional e-commerce UI.",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl lg:text-[7rem] tracking-tighter leading-none font-medium",
+      "h2": "text-4xl sm:text-5xl tracking-tight leading-none font-medium",
+      "h3": "text-2xl sm:text-3xl tracking-tight font-medium",
+      "body": "text-base tracking-normal leading-relaxed text-text_secondary",
+      "overline": "text-xs tracking-[0.2em] uppercase font-semibold text-primary"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing, Editorial Bento Grids, Asymmetry",
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 md:py-40",
+    "grid_system": "Use CSS grid with subgrid where applicable. Break standard rows with overlapping images and text blocks. Avoid rigid boxes."
+  },
+  "motion": {
+    "libraries_to_install": [
+      "framer-motion",
+      "@studio-freight/react-lenis",
+      "lucide-react",
+      "clsx",
+      "tailwind-merge",
+      "react-fast-marquee"
+    ],
+    "guidelines": {
+      "scroll": "Use Lenis for smooth momentum scrolling. The site must feel weighty and premium.",
+      "hero_reveal": "Masked line-by-line reveal using Framer Motion (initial y: 100%, clip-path).",
+      "parallax": "Subtle parallax on hero images using useScroll and useTransform from Framer Motion.",
+      "interactions": "Hover states should scale images slightly (scale-105) and transition colors smoothly."
+    }
+  },
+  "components_strategy": {
+    "forms": "Use customized Shadcn UI components for Custom Cake Order Form. Strip standard borders, add bottom-borders only for a sleek editorial look.",
+    "buttons": "Pill-shaped or sharp rectangular buttons. Hover should trigger a soft fill or text color inversion.",
+    "product_cards": "Cardless design. Large image with text below. No background containers. Let the image be the star."
+  },
+  "pages_blueprint": {
+    "homepage": {
+      "sections": [
+        {
+          "name": "Navigation",
+          "description": "Sticky Glassmorphism nav. Minimalist links. Primary CTA for 'Order Custom Cake'."
+        },
+        {
+          "name": "Kinetic Hero",
+          "description": "Massive typographic hero saying 'Artisan Elegance'. Line-by-line text reveal. A hero image of a pink floral cake with a subtle parallax effect on scroll."
+        },
+        {
+          "name": "Editorial Marquee",
+          "description": "Slow moving marquee with text 'CRAFTED IN PATHANKOT • CUSTOM CELEBRATIONS • AWARD WINNING BAKERY'."
+        },
+        {
+          "name": "Numbered Manifesto (About)",
+          "description": "Chapters (01. The Craft, 02. The Ingredients, 03. The Occasion). Asymmetrical layout mixing typography and bakery interior/frosting shots."
+        },
+        {
+          "name": "Product Collections (E-commerce)",
+          "description": "Grid of categories: Wedding, Birthday, Anniversary, Hampers. Hover over collection reveals a 'Shop Now' button following the cursor or appearing elegantly."
+        },
+        {
+          "name": "Custom Cake Builder",
+          "description": "A sophisticated form section for custom orders. Flavor dropdown, size input, photo upload, and special message. Use Shadcn UI logic with custom styling."
+        },
+        {
+          "name": "Testimonials",
+          "description": "Minimalist text-based quotes fading in on scroll."
+        },
+        {
+          "name": "Footer",
+          "description": "Dark background. Huge 'US BAKERS' typography. Contact details for Pathankot. Payment methods displayed (COD, Razorpay)."
+        }
+      ]
+    }
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1609357871650-96ae6d79503b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxlbGVnYW50JTIwd2VkZGluZyUyMGNha2UlMjBwaW5rfGVufDB8fHx8MTc4NzQ3NTc1NHww&ixlib=rb-4.1.0&q=85",
+      "category": "Hero / Wedding Cake",
+      "description": "White and pink floral cake. Use for the main hero parallax."
+    },
+    {
+      "url": "https://images.pexels.com/photos/31108765/pexels-photo-31108765.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Birthday Cake Collection",
+      "description": "Beautiful pink floral cake."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxhcnRpc2FuJTIwYmlydGhkYXklMjBjYWtlfGVufDB8fHx8MTc4NzQ3NTc1NHww&ixlib=rb-4.1.0&q=85",
+      "category": "Artisan Cake Collection",
+      "description": "Chocolate cake with frosting roses."
+    },
+    {
+      "url": "https://images.pexels.com/photos/27393960/pexels-photo-27393960.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "Gift Hamper Collection",
+      "description": "Luxurious gift basket."
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxjYWtlJTIwZGVjb3JhdGluZyUyMGZyb3N0aW5nfGVufDB8fHx8MTc4NzQ3NTc1NHww&ixlib=rb-4.1.0&q=85",
+      "category": "Manifesto / Craft",
+      "description": "Person piping frosting, great for the 'Craft' chapter."
+    }
+  ],
+  "universal_guidelines": "1. Do NOT use standard Shadcn card wrappers for e-commerce products. Use raw HTML/Tailwind for cardless, editorial layouts. 2. All interactive elements MUST have `data-testid` attributes. 3. DO NOT use generic fonts like Inter for headings. Use Cormorant Garamond. 4. Ensure accessibility (focus states, contrast). 5. Never use pure transparent backgrounds for sticky nav; always use a backdrop blur with semi-transparent color. 6. Avoid standard center-aligned Bootstrap layouts. Embrace asymmetry and generous whitespace (p-12, p-24). 7. Use specific transitions (`transition-transform`, `transition-colors`) instead of `transition-all`. 8. Include hover micro-interactions on all buttons and product images."
+}
