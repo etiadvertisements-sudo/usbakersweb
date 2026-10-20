@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { toast } from "sonner";
 import { Truck, CreditCard } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import { createOrder, formatINR } from "../lib/api";
+import { createOrder, validateCoupon, formatINR } from "../lib/api";
 
 const field =
   "w-full border-0 border-b border-border bg-transparent py-3 text-ink placeholder:text-clay/50 focus:border-rose focus:outline-none focus:ring-0 transition-colors";
@@ -11,7 +11,7 @@ const field =
 function EmptyCartRedirect() {
   const navigate = useNavigate();
   useEffect(() => {
-    navigate("/cart");
+    if (window.location.pathname === "/checkout") navigate("/cart");
   }, [navigate]);
   return null;
 }
@@ -21,6 +21,9 @@ export default function Checkout() {
   const navigate = useNavigate();
   const [payment, setPayment] = useState("cod");
   const [submitting, setSubmitting] = useState(false);
+  const [couponCode, setCouponCode] = useState("");
+  const [appliedCoupon, setAppliedCoupon] = useState(null);
+  const [couponError, setCouponError] = useState("");
   const [form, setForm] = useState({
     customer_name: "",
     phone: "",
@@ -36,6 +39,22 @@ export default function Checkout() {
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
+  const discount = appliedCoupon ? appliedCoupon.discount : 0;
+  const grandTotal = Math.max(0, total - discount);
+
+  const applyCoupon = async () => {
+    if (!couponCode.trim()) return;
+    setCouponError("");
+    try {
+      const res = await validateCoupon({ code: couponCode.trim(), subtotal: total });
+      setAppliedCoupon(res);
+      toast.success(`Coupon ${res.code} applied — you saved ${formatINR(res.discount)}!`);
+    } catch (err) {
+      setAppliedCoupon(null);
+      setCouponError(err.response?.data?.detail || "Invalid coupon code");
+    }
+  };
+
   const submit = async (e) => {
     e.preventDefault();
     if (!form.customer_name || !form.phone || !form.address) {
@@ -48,7 +67,11 @@ export default function Checkout() {
     }
     setSubmitting(true);
     try {
-      const order = await createOrder({ ...form, items, total, payment_method: payment });
+      const order = await createOrder({
+        ...form, items, total: grandTotal,
+        payment_method: payment,
+        coupon_code: appliedCoupon ? appliedCoupon.code : "",
+      });
       clearCart();
       toast.success("Order placed successfully!");
       navigate(`/order/${order.id}`);
@@ -128,9 +151,46 @@ export default function Checkout() {
               </div>
             ))}
           </div>
+
+          <div className="mt-6 space-y-3 text-sm border-t border-border pt-6">
+            <div className="flex justify-between text-clay"><span>Subtotal</span><span className="font-medium text-ink">{formatINR(total)}</span></div>
+            {appliedCoupon && (
+              <div className="flex justify-between text-green-700">
+                <span>Discount ({appliedCoupon.code})
+                  <button onClick={() => { setAppliedCoupon(null); setCouponCode(""); }} data-testid="remove-coupon-btn" className="ml-2 text-xs underline">remove</button>
+                </span>
+                <span>− {formatINR(appliedCoupon.discount)}</span>
+              </div>
+            )}
+            <div className="flex justify-between text-clay"><span>Delivery</span><span>Free in Pathankot</span></div>
+          </div>
+
+          <div className="mt-5">
+            <label className="text-xs font-semibold uppercase tracking-[0.15em] text-clay/70">Coupon code</label>
+            <div className="mt-2 flex gap-2">
+              <input
+                data-testid="coupon-input"
+                className="flex-1 rounded-lg border border-border bg-white px-4 py-2.5 text-sm uppercase placeholder:normal-case placeholder:text-clay/50 focus:border-rose focus:outline-none"
+                placeholder="e.g. USB800"
+                value={couponCode}
+                onChange={(e) => setCouponCode(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={applyCoupon}
+                data-testid="apply-coupon-btn"
+                className="rounded-lg bg-ink px-5 text-xs font-bold text-cream transition-colors hover:bg-rose"
+              >
+                Apply
+              </button>
+            </div>
+            {couponError && <p data-testid="coupon-error" className="mt-2 text-xs text-red-600">{couponError}</p>}
+            {appliedCoupon && <p data-testid="coupon-success" className="mt-2 text-xs text-green-700">{appliedCoupon.label} applied.</p>}
+          </div>
+
           <div className="mt-6 flex justify-between border-t border-border pt-6">
             <span className="font-serif text-2xl text-ink">Total</span>
-            <span className="font-serif text-2xl text-ink" data-testid="checkout-total">{formatINR(total)}</span>
+            <span className="font-serif text-2xl text-ink" data-testid="checkout-total">{formatINR(grandTotal)}</span>
           </div>
           <button
             type="submit"

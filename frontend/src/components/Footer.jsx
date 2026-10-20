@@ -25,10 +25,13 @@ export default function Footer() {
 
           <div className="space-y-4 text-sm">
             <p className="text-xs tracking-[0.2em] uppercase text-rose-soft font-semibold mb-6">Explore</p>
-            <Link to="/shop/birthday" className="block text-cream/70 hover:text-cream transition-colors">Birthday Cakes</Link>
+            <Link to="/shop/cakes" className="block text-cream/70 hover:text-cream transition-colors">Cakes</Link>
+            <Link to="/shop/pastries" className="block text-cream/70 hover:text-cream transition-colors">Pastries</Link>
+            <Link to="/shop/brownies" className="block text-cream/70 hover:text-cream transition-colors">Brownies</Link>
+            <Link to="/shop/cookies" className="block text-cream/70 hover:text-cream transition-colors">Cookies</Link>
+            <Link to="/shop/savouries" className="block text-cream/70 hover:text-cream transition-colors">Savouries</Link>
+            <Link to="/shop/gifting" className="block text-cream/70 hover:text-cream transition-colors">Gifting & Hampers</Link>
             <Link to="/shop/wedding" className="block text-cream/70 hover:text-cream transition-colors">Wedding Cakes</Link>
-            <Link to="/shop/anniversary" className="block text-cream/70 hover:text-cream transition-colors">Anniversary Cakes</Link>
-            <Link to="/shop/hampers" className="block text-cream/70 hover:text-cream transition-colors">Gift Hampers</Link>
             <Link to="/custom-order" className="block text-cream/70 hover:text-cream transition-colors">Custom Cakes</Link>
           </div>
 

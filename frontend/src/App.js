@@ -5,6 +5,7 @@ import { ReactLenis } from "lenis/react";
 import { Toaster } from "sonner";
 import { CartProvider } from "./context/CartContext";
 import Navbar from "./components/Navbar";
+import AnnouncementBar from "./components/AnnouncementBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
@@ -21,11 +22,12 @@ function App() {
   }, []);
 
   return (
-    <ReactLenis root options={{ lerp: 0.09, smoothWheel: true }}>
+    <ReactLenis root options={{ lerp: 0.09, smoothWheel: true }} ref={(l) => { window.lenis = l?.lenis || l; }}>
       <div className="App grain min-h-screen bg-cream">
         <CartProvider>
           <BrowserRouter>
             <ScrollToTop />
+            <AnnouncementBar />
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />

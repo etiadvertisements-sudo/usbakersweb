@@ -4,10 +4,10 @@ import { ShoppingBag, Menu, X } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 const links = [
-  { to: "/shop/birthday", label: "Birthday" },
-  { to: "/shop/wedding", label: "Wedding" },
-  { to: "/shop/anniversary", label: "Anniversary" },
-  { to: "/shop/hampers", label: "Hampers" },
+  { to: "/shop/cakes", label: "Cakes" },
+  { to: "/shop/pastries", label: "Pastries" },
+  { to: "/shop/brownies", label: "Brownies" },
+  { to: "/shop/gifting", label: "Gifting" },
 ];
 
 export default function Navbar() {
@@ -25,8 +25,8 @@ export default function Navbar() {
   return (
     <header
       data-testid="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
-        scrolled ? "bg-cream/80 backdrop-blur-xl border-b border-border" : "bg-transparent"
+      className={`fixed top-9 left-0 right-0 z-50 transition-colors duration-500 ${
+        scrolled ? "bg-cream/85 backdrop-blur-xl border-b border-border" : "bg-transparent"
       }`}
     >
       <nav className="mx-auto flex items-center justify-between px-6 md:px-12 lg:px-24 h-20">
