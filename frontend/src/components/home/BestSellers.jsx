@@ -22,17 +22,13 @@ export default function BestSellers() {
   return (
     <section data-testid="bestsellers" className="px-6 py-20 md:px-12 lg:px-24">
       <Reveal>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-rose">Most Loved</p>
-            <h2 className="font-serif text-3xl tracking-tight text-ink sm:text-4xl">Bestsellers</h2>
-          </div>
-          <Link to="/shop" data-testid="bestsellers-view-all" className="link-underline text-sm font-semibold text-ink">
-            View all →
-          </Link>
-        </div>
+        <p className="mb-2 text-center text-xs font-bold uppercase tracking-[0.3em] text-rose">Most Loved</p>
+        <h2 className="text-center font-serif text-3xl font-semibold tracking-tight text-gold sm:text-4xl">
+          — Bestsellers —
+        </h2>
+        <p className="gold-diamonds mt-3 text-center" aria-hidden="true">♦ ♦ ♦ ♦</p>
 
-        <div className="mt-7 flex flex-wrap gap-2" data-testid="bestseller-tabs">
+        <div className="mt-8 flex flex-wrap justify-center gap-2" data-testid="bestseller-tabs">
           <button
             onClick={() => setTab("all")}
             data-testid="tab-all"
@@ -59,10 +55,15 @@ export default function BestSellers() {
         </div>
       </Reveal>
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {visible.slice(0, 8).map((p, i) => (
           <ProductCard key={p.id} product={p} index={i} />
         ))}
+      </div>
+      <div className="mt-10 text-center">
+        <Link to="/shop" data-testid="bestsellers-view-all" className="inline-flex rounded-full bg-rose px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-rose-deep">
+          View All Products
+        </Link>
       </div>
     </section>
   );

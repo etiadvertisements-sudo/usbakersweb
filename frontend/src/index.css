@@ -6,24 +6,24 @@
 @layer base {
     :root {
         --background: 40 43% 98%;
-        --foreground: 345 15% 15%;
+        --foreground: 24 11% 15%;
         --card: 0 0% 100%;
-        --card-foreground: 345 15% 15%;
+        --card-foreground: 24 11% 15%;
         --popover: 0 0% 100%;
-        --popover-foreground: 345 15% 15%;
-        --primary: 342 46% 57%;
+        --popover-foreground: 24 11% 15%;
+        --primary: 337 78% 48%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 33 33% 94%;
-        --secondary-foreground: 345 15% 15%;
-        --muted: 33 33% 94%;
-        --muted-foreground: 345 8% 40%;
-        --accent: 344 55% 78%;
-        --accent-foreground: 345 15% 15%;
+        --secondary: 160 30% 94%;
+        --secondary-foreground: 24 11% 15%;
+        --muted: 36 30% 95%;
+        --muted-foreground: 24 8% 40%;
+        --accent: 339 80% 86%;
+        --accent-foreground: 24 11% 15%;
         --destructive: 0 72% 51%;
         --destructive-foreground: 0 0% 98%;
-        --border: 33 30% 87%;
-        --input: 33 30% 87%;
-        --ring: 342 46% 57%;
+        --border: 45 30% 87%;
+        --input: 45 30% 87%;
+        --ring: 337 78% 48%;
         --radius: 0.5rem;
     }
 }
@@ -43,29 +43,15 @@
 }
 
 ::selection {
-    background: #C65D7B;
+    background: #D81B60;
     color: #fff;
 }
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: #F6F1EA; }
-::-webkit-scrollbar-thumb { background: #C65D7B; border-radius: 999px; }
+::-webkit-scrollbar-track { background: #EAF4F1; }
+::-webkit-scrollbar-thumb { background: #8FC3B4; border-radius: 999px; }
 
 .font-serif { font-family: 'Cormorant Garamond', serif; }
-
-/* Grain overlay */
-.grain::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Masked line reveal */
-.reveal-mask { overflow: hidden; display: block; }
 
 .link-underline {
     position: relative;
@@ -86,3 +72,6 @@
     transform: scaleX(1);
     transform-origin: left;
 }
+
+/* Theobroma-style section heading ornaments */
+.gold-diamonds { color: #B8860B; letter-spacing: 0.5em; font-size: 10px; }

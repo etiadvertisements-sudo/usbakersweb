@@ -13,14 +13,23 @@ module.exports = {
       },
       colors: {
         rose: {
-          DEFAULT: '#C65D7B',
-          deep: '#A94862',
-          soft: '#E4A7B5',
+          DEFAULT: '#D81B60',
+          deep: '#C2185B',
+          soft: '#F7B2C8',
+        },
+        mint: {
+          DEFAULT: '#8FC3B4',
+          dark: '#75A89A',
+          light: '#EAF4F1',
+        },
+        gold: {
+          DEFAULT: '#B8860B',
+          light: '#D4AF37',
         },
         cream: '#FDFBF7',
-        sand: '#F6F1EA',
-        ink: '#2D2022',
-        clay: '#5C4D50',
+        sand: '#FAF6EF',
+        ink: '#2A2421',
+        clay: '#6E625D',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

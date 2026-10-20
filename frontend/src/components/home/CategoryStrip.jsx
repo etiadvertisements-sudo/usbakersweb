@@ -11,14 +11,14 @@ export default function CategoryStrip() {
   }, []);
 
   return (
-    <section data-testid="category-strip" className="px-6 py-14 md:px-12 lg:px-24">
+    <section data-testid="category-strip" className="bg-mint-light px-6 py-16 md:px-12 lg:px-24">
       <Reveal>
-        <div className="flex items-end justify-between">
-          <h2 className="font-serif text-2xl tracking-tight text-ink sm:text-3xl">What are you craving?</h2>
-          <Link to="/shop" data-testid="category-strip-view-all" className="link-underline text-sm font-semibold text-rose">View all →</Link>
-        </div>
+        <h2 className="text-center font-serif text-3xl font-semibold tracking-tight text-gold sm:text-4xl">
+          — What are you craving? —
+        </h2>
+        <p className="gold-diamonds mt-3 text-center" aria-hidden="true">♦ ♦ ♦ ♦</p>
       </Reveal>
-      <div className="mt-8 flex gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-8 md:overflow-visible">
+      <div className="mt-10 flex gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-8 md:overflow-visible">
         {categories.map((c, i) => (
           <Reveal key={c.slug} delay={i * 0.05}>
             <Link to={`/shop/${c.slug}`} data-testid={`cat-circle-${c.slug}`} className="group flex w-24 shrink-0 flex-col items-center gap-3 md:w-auto">

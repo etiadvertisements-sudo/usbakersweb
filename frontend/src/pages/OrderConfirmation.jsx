@@ -13,7 +13,7 @@ export default function OrderConfirmation() {
   }, [orderId]);
 
   return (
-    <main data-testid="order-confirmation-page" className="flex min-h-screen flex-col items-center justify-center px-6 py-32 text-center">
+    <main data-testid="order-confirmation-page" className="flex min-h-[80vh] flex-col items-center justify-center px-6 py-16 text-center">
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -22,7 +22,7 @@ export default function OrderConfirmation() {
       >
         <Check size={36} />
       </motion.div>
-      <h1 className="mt-8 font-serif text-5xl tracking-tight text-ink lg:text-6xl">Thank you!</h1>
+      <h1 className="mt-8 font-serif text-5xl tracking-tight text-gold lg:text-6xl">Thank you!</h1>
       <p className="mt-4 max-w-md text-clay">
         Your order has been placed. Our team will call you shortly to confirm the details.
       </p>

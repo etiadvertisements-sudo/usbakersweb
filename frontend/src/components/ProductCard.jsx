@@ -38,7 +38,7 @@ export default function ProductCard({ product, index = 0 }) {
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.6, delay: (index % 4) * 0.07, ease: [0.22, 1, 0.36, 1] }}
       data-testid={`product-card-${product.slug}`}
-      className="group overflow-hidden rounded-xl border border-rose/10 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+      className="group overflow-hidden rounded-xl border border-rose/10 bg-sand shadow-sm transition-shadow duration-300 hover:shadow-md"
     >
       <Link to={`/product/${product.slug}`} className="block">
         <div className="relative overflow-hidden aspect-[4/3] bg-sand">
@@ -61,7 +61,7 @@ export default function ProductCard({ product, index = 0 }) {
           <h3 className="font-serif text-lg leading-snug text-ink line-clamp-1">{product.name}</h3>
           <p className="mt-1 text-xs text-clay">{product.weight}</p>
           <div className="mt-3 flex items-center justify-between">
-            <p className="text-base font-bold text-ink">{formatINR(product.price)}</p>
+            <p className="text-base font-bold text-rose">{formatINR(product.price)}</p>
             <button
               onClick={handleAdd}
               data-testid={`add-to-cart-${product.slug}`}

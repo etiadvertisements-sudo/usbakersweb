@@ -1,3 +1,4 @@
+import { Star } from "lucide-react";
 import { Reveal } from "../Motion";
 
 const QUOTES = [
@@ -23,24 +24,27 @@ const QUOTES = [
 
 export default function Testimonials() {
   return (
-    <section data-testid="testimonials" className="bg-sand px-6 py-24 md:px-12 md:py-40 lg:px-24">
+    <section data-testid="testimonials" className="bg-mint-light px-6 py-20 md:px-12 lg:px-24">
       <Reveal>
-        <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-rose">
-          Kind Words
-        </p>
-        <h2 className="mx-auto max-w-3xl text-center font-serif text-4xl leading-tight tracking-tight text-ink sm:text-5xl lg:text-6xl">
-          Loved by families across the city.
+        <h2 className="text-center font-serif text-3xl font-semibold tracking-tight text-gold sm:text-4xl">
+          — Loved by Pathankot —
         </h2>
+        <p className="gold-diamonds mt-3 text-center" aria-hidden="true">♦ ♦ ♦ ♦</p>
       </Reveal>
 
-      <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
+      <div className="mx-auto mt-12 grid max-w-6xl gap-6 md:grid-cols-3">
         {QUOTES.map((q, i) => (
           <Reveal key={i} delay={i * 0.12}>
-            <div className="flex h-full flex-col">
-              <p className="font-serif text-2xl italic leading-snug text-ink">“{q.quote}”</p>
+            <div className="flex h-full flex-col rounded-2xl bg-white p-7 shadow-sm transition-shadow duration-300 hover:shadow-md">
+              <div className="flex gap-1 text-gold-light">
+                {[...Array(5)].map((_, s) => (
+                  <Star key={s} size={15} fill="currentColor" strokeWidth={0} />
+                ))}
+              </div>
+              <p className="mt-4 flex-1 font-serif text-lg italic leading-relaxed text-ink">“{q.quote}”</p>
               <div className="mt-6 border-t border-border pt-4">
                 <p className="font-semibold text-ink">{q.name}</p>
-                <p className="text-xs uppercase tracking-[0.15em] text-clay/60">{q.tag}</p>
+                <p className="mt-0.5 text-[11px] font-bold uppercase tracking-[0.15em] text-rose">{q.tag}</p>
               </div>
             </div>
           </Reveal>

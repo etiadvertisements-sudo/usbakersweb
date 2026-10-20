@@ -5,7 +5,6 @@ import { ReactLenis } from "lenis/react";
 import { Toaster } from "sonner";
 import { CartProvider } from "./context/CartContext";
 import Navbar from "./components/Navbar";
-import AnnouncementBar from "./components/AnnouncementBar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
@@ -27,7 +26,6 @@ function App() {
         <CartProvider>
           <BrowserRouter>
             <ScrollToTop />
-            <AnnouncementBar />
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />

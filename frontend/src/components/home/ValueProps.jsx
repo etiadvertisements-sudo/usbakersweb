@@ -10,20 +10,24 @@ const PROPS = [
 
 export default function ValueProps() {
   return (
-    <section data-testid="value-props" className="border-y border-border bg-white px-6 py-14 md:px-12 lg:px-24">
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <section data-testid="value-props" className="bg-white px-6 py-20 md:px-12 lg:px-24">
+      <Reveal>
+        <h2 className="text-center font-serif text-3xl font-semibold tracking-tight text-gold sm:text-4xl">
+          — Why US Bakers? —
+        </h2>
+        <p className="gold-diamonds mt-3 text-center" aria-hidden="true">♦ ♦ ♦ ♦</p>
+      </Reveal>
+      <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {PROPS.map((p, i) => {
           const Icon = p.icon;
           return (
             <Reveal key={p.title} delay={i * 0.08}>
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-rose/10 text-rose">
-                  <Icon size={20} />
+              <div className="flex flex-col items-center text-center">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-mint-light text-mint-dark">
+                  <Icon size={24} />
                 </span>
-                <div>
-                  <h3 className="font-semibold text-ink">{p.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-clay">{p.desc}</p>
-                </div>
+                <h3 className="mt-4 font-semibold text-ink">{p.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-clay">{p.desc}</p>
               </div>
             </Reveal>
           );

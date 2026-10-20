@@ -21,8 +21,8 @@ const BANNERS = [
     desc: "Curated boxes of brownies, cookies & chocolates. 15% off with COMBO15.",
     cta: "Shop gifting",
     to: "/shop/gifting",
-    bg: "bg-ink",
-    text: "text-cream",
+    bg: "bg-mint-dark",
+    text: "text-white",
     span: "",
   },
   {
@@ -52,7 +52,7 @@ export default function PromoBanners() {
                 className={`group flex h-full flex-col justify-between rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-xl ${b.bg} ${b.text} ${b.span}`}
               >
                 <div>
-                  <Icon size={28} className={b.id === "fresh" ? "text-rose" : "text-rose-soft"} />
+                  <Icon size={28} className={b.id === "fresh" ? "text-gold" : "text-white/85"} />
                   <h3 className="mt-5 font-serif text-2xl leading-tight md:text-3xl">{b.title}</h3>
                   <p className={`mt-3 text-sm leading-relaxed ${b.id === "fresh" ? "text-clay" : "opacity-75"}`}>{b.desc}</p>
                 </div>

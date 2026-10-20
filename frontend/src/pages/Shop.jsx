@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, useSearchParams } from "react-router-dom";
 import { getProducts, getCategories } from "../lib/api";
 import ProductCard from "../components/ProductCard";
 import { Reveal } from "../components/Motion";
@@ -7,6 +7,8 @@ import { Reveal } from "../components/Motion";
 export default function Shop() {
   const { category } = useParams();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const search = (searchParams.get("search") || "").toLowerCase();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,20 +25,24 @@ export default function Shop() {
   }, [category]);
 
   const active = categories.find((c) => c.slug === category);
+  const visible = search
+    ? products.filter((p) => (p.name + " " + p.description + " " + p.category).toLowerCase().includes(search))
+    : products;
 
   return (
-    <main data-testid="shop-page" className="pt-32">
+    <main data-testid="shop-page" className="pt-12">
       <section className="px-6 pb-10 md:px-12 lg:px-24">
         <Reveal>
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-rose">
-            {active ? active.name : "Full Collection"}
+          <p className="mb-3 text-center text-xs font-semibold uppercase tracking-[0.3em] text-rose">
+            {search ? `Results for “${searchParams.get("search")}”` : active ? active.name : "Full Collection"}
           </p>
-          <h1 className="max-w-3xl font-serif text-5xl leading-none tracking-tight text-ink sm:text-6xl lg:text-7xl">
-            {active ? active.tagline : "Every cake, every celebration."}
+          <h1 className="mx-auto max-w-3xl text-center font-serif text-5xl leading-none tracking-tight text-gold sm:text-6xl lg:text-7xl">
+            {active ? active.tagline : "Every bake, every celebration."}
           </h1>
+          <p className="gold-diamonds mt-4 text-center" aria-hidden="true">♦ ♦ ♦ ♦</p>
         </Reveal>
 
-        <div className="mt-10 flex flex-wrap gap-3" data-testid="category-filters">
+        <div className="mt-10 flex flex-wrap justify-center gap-3" data-testid="category-filters">
           <button
             onClick={() => navigate("/shop")}
             data-testid="filter-all"
@@ -68,9 +74,9 @@ export default function Shop() {
               <div key={i} className="aspect-[4/5] animate-pulse rounded-sm bg-sand" />
             ))}
           </div>
-        ) : products.length ? (
+        ) : visible.length ? (
           <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {products.map((p, i) => (
+            {visible.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} />
             ))}
           </div>

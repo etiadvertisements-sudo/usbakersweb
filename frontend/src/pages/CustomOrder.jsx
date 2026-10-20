@@ -59,13 +59,13 @@ export default function CustomOrder() {
   };
 
   return (
-    <main data-testid="custom-order-page" className="pt-32 px-6 pb-32 md:px-12 lg:px-24">
+    <main data-testid="custom-order-page" className="pt-12 px-6 pb-32 md:px-12 lg:px-24">
       <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-32 lg:h-fit">
           <Reveal>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-rose">Made to order</p>
-            <h1 className="font-serif text-5xl leading-none tracking-tight text-ink lg:text-7xl">
-              Design your<br /><span className="italic text-rose">dream cake.</span>
+            <h1 className="font-serif text-5xl leading-none tracking-tight text-gold lg:text-7xl">
+              Design your<br /><span className="italic">dream cake.</span>
             </h1>
             <p className="mt-8 max-w-md text-base leading-relaxed text-clay">
               Tell us about your celebration and vision. Share a reference photo, pick a flavour and

@@ -42,7 +42,7 @@ export default function Hero() {
   const slide = SLIDES[index];
 
   return (
-    <section data-testid="hero" className="relative min-h-[88vh] overflow-hidden pt-9">
+    <section ref={undefined} data-testid="hero" className="relative min-h-[82vh] overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.img
           key={slide.img}
@@ -57,7 +57,7 @@ export default function Hero() {
       </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/40 to-transparent" />
 
-      <div className="relative z-10 mx-auto flex min-h-[88vh] items-center px-6 md:px-12 lg:px-24">
+      <div className="relative z-10 mx-auto flex min-h-[82vh] items-center px-6 md:px-12 lg:px-24">
         <div className="max-w-xl">
           <motion.p
             key={`k-${index}`}

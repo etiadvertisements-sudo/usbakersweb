@@ -83,8 +83,8 @@ export default function Checkout() {
   };
 
   return (
-    <main data-testid="checkout-page" className="pt-32 px-6 pb-32 md:px-12 lg:px-24">
-      <h1 className="font-serif text-5xl tracking-tight text-ink lg:text-6xl">Checkout</h1>
+    <main data-testid="checkout-page" className="pt-12 px-6 pb-32 md:px-12 lg:px-24">
+      <h1 className="font-serif text-5xl tracking-tight text-gold lg:text-6xl">Checkout</h1>
 
       <form onSubmit={submit} className="mt-12 grid gap-16 lg:grid-cols-[1.4fr_1fr]">
         <div className="space-y-12">

@@ -1,59 +1,63 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Phone, MapPin, Mail } from "lucide-react";
+import { Instagram, Facebook, Phone, MapPin, Mail, Cake } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer data-testid="footer" className="bg-ink text-cream">
-      <div className="px-6 md:px-12 lg:px-24 pt-24 pb-10">
-        <div className="grid gap-16 md:grid-cols-[1.4fr_1fr_1fr]">
+    <footer data-testid="footer" className="bg-mint text-ink">
+      <div className="px-6 pt-16 pb-8 md:px-12 lg:px-24">
+        <div className="grid gap-12 md:grid-cols-4">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-rose-soft font-semibold mb-6">
-              Crafted in Pathankot
+            <span className="inline-flex items-center gap-2 rounded-full bg-rose px-4 py-2 text-white shadow-md">
+              <Cake size={16} />
+              <span className="font-serif text-lg font-bold">US Bakers</span>
+            </span>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/75">
+              Artisan custom cakes, pastries, brownies & gift hampers — freshly baked daily in Pathankot.
             </p>
-            <h3 className="font-serif text-5xl md:text-7xl leading-none">
-              Let's bake<br />something<br />
-              <span className="italic text-rose-soft">unforgettable.</span>
-            </h3>
-            <Link
-              to="/custom-order"
-              data-testid="footer-custom-cta"
-              className="mt-10 inline-flex items-center rounded-full border border-cream/30 px-8 py-3 text-sm font-semibold hover:bg-rose hover:border-rose transition-colors"
-            >
-              Start your custom order
-            </Link>
+            <div className="mt-5 flex gap-3">
+              <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-ink transition-colors hover:bg-rose hover:text-white"><Instagram size={16} /></a>
+              <a href="#" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-ink transition-colors hover:bg-rose hover:text-white"><Facebook size={16} /></a>
+            </div>
           </div>
 
-          <div className="space-y-4 text-sm">
-            <p className="text-xs tracking-[0.2em] uppercase text-rose-soft font-semibold mb-6">Explore</p>
-            <Link to="/shop/cakes" className="block text-cream/70 hover:text-cream transition-colors">Cakes</Link>
-            <Link to="/shop/pastries" className="block text-cream/70 hover:text-cream transition-colors">Pastries</Link>
-            <Link to="/shop/brownies" className="block text-cream/70 hover:text-cream transition-colors">Brownies</Link>
-            <Link to="/shop/cookies" className="block text-cream/70 hover:text-cream transition-colors">Cookies</Link>
-            <Link to="/shop/savouries" className="block text-cream/70 hover:text-cream transition-colors">Savouries</Link>
-            <Link to="/shop/gifting" className="block text-cream/70 hover:text-cream transition-colors">Gifting & Hampers</Link>
-            <Link to="/shop/wedding" className="block text-cream/70 hover:text-cream transition-colors">Wedding Cakes</Link>
-            <Link to="/custom-order" className="block text-cream/70 hover:text-cream transition-colors">Custom Cakes</Link>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-wider">Useful Links</p>
+            <div className="space-y-2.5 text-sm">
+              <Link to="/shop/cakes" className="block text-ink/75 transition-colors hover:text-rose">Speciality Cakes</Link>
+              <Link to="/shop/pastries" className="block text-ink/75 transition-colors hover:text-rose">Pastries</Link>
+              <Link to="/shop/brownies" className="block text-ink/75 transition-colors hover:text-rose">Brownies</Link>
+              <Link to="/shop/cookies" className="block text-ink/75 transition-colors hover:text-rose">Cookies</Link>
+              <Link to="/shop/gifting" className="block text-ink/75 transition-colors hover:text-rose">Gift Hampers</Link>
+              <Link to="/custom-order" className="block text-ink/75 transition-colors hover:text-rose">Custom Cake Order</Link>
+            </div>
           </div>
 
-          <div className="space-y-4 text-sm">
-            <p className="text-xs tracking-[0.2em] uppercase text-rose-soft font-semibold mb-6">Visit & Order</p>
-            <p className="flex items-start gap-3 text-cream/70"><MapPin size={16} className="mt-0.5 shrink-0" /> Main Bazaar, Pathankot, Punjab 145001</p>
-            <p className="flex items-center gap-3 text-cream/70"><Phone size={16} /> +91 98765 43210</p>
-            <p className="flex items-center gap-3 text-cream/70"><Mail size={16} /> hello@usbakers.in</p>
-            <div className="flex gap-4 pt-3">
-              <a href="#" aria-label="Instagram" className="text-cream/70 hover:text-rose-soft transition-colors"><Instagram size={20} /></a>
-              <a href="#" aria-label="Facebook" className="text-cream/70 hover:text-rose-soft transition-colors"><Facebook size={20} /></a>
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-wider">Payment Methods</p>
+            <div className="flex flex-wrap gap-2">
+              {["UPI", "Cards", "NetBanking", "Cash on Delivery"].map((m) => (
+                <span key={m} className="rounded-md bg-white/80 px-3 py-1.5 text-xs font-semibold text-ink shadow-sm">
+                  {m}
+                </span>
+              ))}
+            </div>
+            <p className="mt-4 text-xs text-ink/60">100% secure payments. Razorpay protected.</p>
+          </div>
+
+          <div>
+            <p className="mb-4 text-xs font-bold uppercase tracking-wider">Contact & Connect</p>
+            <div className="space-y-3 text-sm text-ink/75">
+              <p className="flex items-start gap-2.5"><MapPin size={15} className="mt-0.5 shrink-0" /> Main Bazaar, Pathankot, Punjab 145001</p>
+              <a href="tel:+919876543210" className="flex items-center gap-2.5 hover:text-rose"><Phone size={15} /> +91 98765 43210</a>
+              <a href="mailto:hello@usbakers.in" className="flex items-center gap-2.5 hover:text-rose"><Mail size={15} /> hello@usbakers.in</a>
+              <p className="text-xs text-ink/60">Open daily · 8 AM – 10 PM</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-20 border-t border-cream/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-cream/50">© {new Date().getFullYear()} US Bakers. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-xs text-cream/50">
-            <span>Cash on Delivery</span>
-            <span className="h-1 w-1 rounded-full bg-cream/30" />
-            <span>Razorpay Secure Payments</span>
-          </div>
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-6 md:flex-row">
+          <p className="text-xs text-ink/60">© {new Date().getFullYear()} US Bakers, Pathankot. All rights reserved.</p>
+          <p className="font-serif text-sm italic text-ink/70">Baked with love, every single day.</p>
         </div>
       </div>
     </footer>

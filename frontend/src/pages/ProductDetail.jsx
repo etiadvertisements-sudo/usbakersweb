@@ -35,7 +35,7 @@ export default function ProductDetail() {
   };
 
   return (
-    <main data-testid="product-detail-page" className="pt-28">
+    <main data-testid="product-detail-page" className="pt-8">
       <div className="px-6 md:px-12 lg:px-24">
         <button
           onClick={() => navigate(-1)}
@@ -61,8 +61,8 @@ export default function ProductDetail() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="flex flex-col justify-center"
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-rose">{product.category}</p>
-            <h1 className="mt-3 font-serif text-5xl leading-none tracking-tight text-ink lg:text-6xl">
+            <p className="text-xs font-bold uppercase tracking-[0.3em] text-rose">{product.category}</p>
+            <h1 className="mt-3 font-serif text-5xl leading-none tracking-tight text-gold lg:text-6xl">
               {product.name}
             </h1>
             <p className="mt-5 text-2xl font-medium text-ink">{formatINR(product.price)}</p>
