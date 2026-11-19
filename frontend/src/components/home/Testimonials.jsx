@@ -27,7 +27,7 @@ export default function Testimonials() {
     <section data-testid="testimonials" className="bg-mint-light px-6 py-20 md:px-12 lg:px-24">
       <Reveal>
         <h2 className="text-center font-serif text-3xl font-semibold tracking-tight text-gold sm:text-4xl">
-          — Loved by Pathankot —
+          — Loved by many, and still counting —
         </h2>
         <p className="gold-diamonds mt-3 text-center" aria-hidden="true">♦ ♦ ♦ ♦</p>
       </Reveal>

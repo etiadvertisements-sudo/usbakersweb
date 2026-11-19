@@ -29,7 +29,9 @@ Build a "next-level", fully functional e-commerce website for **US Bakers**, a r
 ## Pages
 - Home, Shop (+category/search), Product detail, Custom Order, Cart, Checkout, Order Confirmation, **About** (`/about` — story, stats, craft, values, CTA), **Contact** (`/contact` — info cards, map image, enquiry form → POST /api/contact).
 
-## Implemented
+- **2026-06-23 (v4)**: About page rewritten with the real founder story (COVID 2020, Urvashi Sikka, home-kitchen beginnings, repeated cake trials, the "mmm… yummmm" moment) + attached watercolor founder illustration (`/public/founder-illustration.webp`). Added home-page parallax cake-categories section (framer-motion useScroll parallax, full-bleed rows: Speciality Cakes / Brownies & Bakes / Gifting). Testimonials heading changed to "Loved by many, and still counting". Added `/app/DEPLOY_HOSTINGER_VPS.md` (IP-only VPS deploy guide).
+
+## Implemented (earlier)
 - **2026-06-23 (v1)**: Editorial luxury homepage, catalog API (16 products / 4 categories), shop + detail + cart + COD checkout + confirmation, custom order form with photo upload.
 - **2026-06-23 (v2)**: Theobroma-style e-commerce structure — hero promo carousel (3 auto-rotating slides), 8 categories, 38 products, coupon codes (USB500/800/1000/1500, COMBO15) with /api/coupons/validate, coupon applied in checkout (verified ₹850→₹800), fixed empty-cart redirect bug.
 - **2026-06-23 (v3)**: Theobroma look-and-feel restyle (user shared theobroma.in screenshots, wanted "premium, minimal"): mint header (#8FC3B4) with pink logo badge, pill search bar (live product search), black cart button, top offer strip ("Upto ₹200 OFF · USB1500" + Pathankot store + phone), secondary category nav row. Gold serif (#B8860B) centered section headings with ♦♦♦♦ ornaments. Circular category strip on mint-light, ivory product cards with pink prices, centered value props (mint icon circles), star-rating testimonial cards, 4-card store info grid, mint footer (Useful Links / Payment Methods / Contact & Connect). Custom CTA now soft-pink section. All pages re-padded for sticky header. Verified: search (6 results for "brownie"), mobile layout, no JS errors.

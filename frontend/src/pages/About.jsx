@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Heart, Award, Leaf, Users } from "lucide-react";
 import { Reveal } from "../components/Motion";
 
 const STATS = [
-  { value: "15+", label: "Years of baking" },
-  { value: "50k+", label: "Happy customers" },
+  { value: "2020", label: "Where it began" },
+  { value: "1000s", label: "Cakes baked" },
   { value: "200+", label: "Cake designs" },
   { value: "100%", label: "Freshly baked" },
 ];
@@ -13,7 +12,7 @@ const STATS = [
 const VALUES = [
   { icon: Leaf, title: "Real Ingredients", desc: "Fresh cream, real butter, seasonal fruit and Belgian chocolate — never compromises." },
   { icon: Heart, title: "Handcrafted", desc: "Every cake is made to order by hand. No moulds, no shortcuts, just skill and love." },
-  { icon: Award, title: "Pathankot's Favourite", desc: "A name families have trusted for celebrations, big and small, for over a decade." },
+  { icon: Award, title: "Homegrown & Loved", desc: "Born in a home kitchen, now a name families across Pathankot trust for their celebrations." },
   { icon: Users, title: "Made for You", desc: "We design around your story, so each creation feels as personal as the moment." },
 ];
 
@@ -26,29 +25,59 @@ export default function About() {
           <Reveal>
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-rose">Our Story</p>
             <h1 className="font-serif text-5xl leading-[1.02] tracking-tight text-gold sm:text-6xl lg:text-7xl">
-              Baking joy in Pathankot since day one.
+              It all began in a home kitchen.
             </h1>
             <p className="gold-diamonds mt-5" aria-hidden="true">♦ ♦ ♦ ♦</p>
             <p className="mt-6 max-w-md text-base leading-relaxed text-clay">
-              US Bakers began with a simple belief — that every celebration deserves a cake as
-              special as the moment itself. What started as a small neighbourhood bakery has grown
-              into Pathankot's most-loved destination for custom cakes, pastries and gifting.
+              US Bakers isn't a story that started in a grand bakery — it started at home, with one
+              woman, a whisk, and a lot of love.
             </p>
-            <Link
-              to="/custom-order"
-              data-testid="about-cta"
-              className="mt-8 inline-flex rounded-full bg-rose px-8 py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-rose-deep hover:shadow-lg"
-            >
-              Order a custom cake
-            </Link>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="overflow-hidden rounded-3xl shadow-lg">
+            <div className="overflow-hidden rounded-3xl bg-white p-4 shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1711672284661-bd70e38f31b2?crop=entropy&cs=srgb&fm=jpg&q=85&w=1100"
-                alt="Inside US Bakers"
-                className="aspect-[4/5] w-full object-cover"
+                src="/founder-illustration.webp"
+                alt="Urvashi Sikka, founder of US Bakers, decorating a cake"
+                className="aspect-square w-full rounded-2xl object-contain"
               />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* The Story */}
+      <section className="px-6 py-20 md:px-12 md:py-28 lg:px-24">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <h2 className="font-serif text-4xl leading-tight tracking-tight text-gold sm:text-5xl">
+              From a lockdown experiment to Pathankot's favourite.
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-8 space-y-6 text-lg leading-relaxed text-clay">
+              <p>
+                It was <span className="font-semibold text-ink">2020</span>. The world had come to a
+                standstill, and like so many of us, <span className="font-semibold text-ink">Urvashi Sikka</span> found
+                herself at home, looking for a way to turn the long, uncertain days into something sweet.
+              </p>
+              <p>
+                Her kitchen became her studio. There were flops, fallen sponges and frostings that
+                simply wouldn't set — <span className="italic">trial after trial after trial</span>. But she kept
+                going, tweaking a recipe here, a technique there, chasing a taste she could feel but
+                hadn't yet caught.
+              </p>
+              <p>
+                And then, one evening, it happened. One bite. That one{" "}
+                <span className="font-semibold text-rose">“mmm… yummmm”</span> moment — the kind that makes
+                you close your eyes and smile. That single cake changed everything. Friends asked for
+                more. Neighbours placed orders. Word travelled across Pathankot.
+              </p>
+              <p>
+                What began as a way to pass lockdown days quietly grew into{" "}
+                <span className="font-semibold text-ink">US Bakers</span> — a bakery built entirely on
+                homemade love, honest ingredients and that relentless pursuit of the perfect bite. Today,
+                every cake we make still begins the way the very first one did: by hand, with heart.
+              </p>
             </div>
           </Reveal>
         </div>
@@ -65,35 +94,6 @@ export default function About() {
               </div>
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* Craft */}
-      <section className="px-6 py-20 md:px-12 md:py-28 lg:px-24">
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          <Reveal>
-            <div className="overflow-hidden rounded-3xl shadow-lg">
-              <img
-                src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?crop=entropy&cs=srgb&fm=jpg&q=85&w=1100"
-                alt="Baker kneading dough"
-                className="aspect-[5/4] w-full object-cover"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <h2 className="font-serif text-4xl leading-tight tracking-tight text-gold sm:text-5xl">
-              Where craft meets celebration.
-            </h2>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-clay">
-              Our bakers start before sunrise, kneading, piping and layering every creation by hand.
-              From a child's first birthday to a golden anniversary, we pour the same care into each
-              bake — because we're not just making cakes, we're making memories.
-            </p>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-clay">
-              Walk into our Main Bazaar store and you'll smell it the moment you step in: fresh,
-              honest baking, made with love, every single day.
-            </p>
-          </Reveal>
         </div>
       </section>
 
