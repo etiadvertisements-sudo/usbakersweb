@@ -92,6 +92,20 @@ class CouponCheck(BaseModel):
     subtotal: int
 
 
+class ContactMessageCreate(BaseModel):
+    name: str
+    email: Optional[str] = ""
+    phone: str
+    subject: Optional[str] = "General enquiry"
+    message: str
+
+
+class ContactMessage(ContactMessageCreate):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+
 # ---------------- Seed Data ----------------
 CATEGORIES = [
     {"slug": "cakes", "name": "Cakes", "tagline": "Celebration cakes for every occasion",
@@ -334,6 +348,13 @@ async def create_custom_order(payload: CustomOrderCreate):
     order = CustomOrder(**payload.model_dump())
     await db.custom_orders.insert_one(order.model_dump())
     return order
+
+
+@api_router.post("/contact", response_model=ContactMessage)
+async def create_contact(payload: ContactMessageCreate):
+    msg = ContactMessage(**payload.model_dump())
+    await db.contact_messages.insert_one(msg.model_dump())
+    return msg
 
 
 app.include_router(api_router)

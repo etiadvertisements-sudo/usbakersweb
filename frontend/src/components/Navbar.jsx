@@ -5,11 +5,12 @@ import { useCart } from "../context/CartContext";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
+  { to: "/about", label: "About Us" },
   { to: "/shop", label: "Products" },
   { to: "/shop/cakes", label: "Speciality Cakes" },
-  { to: "/shop/brownies", label: "Brownies" },
-  { to: "/shop/gifting", label: "Gifting" },
   { to: "/custom-order", label: "Custom Cakes" },
+  { to: "/shop/gifting", label: "Gifting" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {

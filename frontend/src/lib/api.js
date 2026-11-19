@@ -12,6 +12,7 @@ export const getOffers = () => api.get("/offers").then((r) => r.data);
 export const validateCoupon = (payload) => api.post("/coupons/validate", payload).then((r) => r.data);
 export const createOrder = (payload) => api.post("/orders", payload).then((r) => r.data);
 export const createCustomOrder = (payload) => api.post("/custom-orders", payload).then((r) => r.data);
+export const createContact = (payload) => api.post("/contact", payload).then((r) => r.data);
 
 export const formatINR = (n) =>
   new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(n);

@@ -30,6 +30,8 @@ export default function Footer() {
               <Link to="/shop/cookies" className="block text-ink/75 transition-colors hover:text-rose">Cookies</Link>
               <Link to="/shop/gifting" className="block text-ink/75 transition-colors hover:text-rose">Gift Hampers</Link>
               <Link to="/custom-order" className="block text-ink/75 transition-colors hover:text-rose">Custom Cake Order</Link>
+              <Link to="/about" className="block text-ink/75 transition-colors hover:text-rose">About Us</Link>
+              <Link to="/contact" className="block text-ink/75 transition-colors hover:text-rose">Contact</Link>
             </div>
           </div>
 

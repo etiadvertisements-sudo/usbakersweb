@@ -20,8 +20,14 @@ Build a "next-level", fully functional e-commerce website for **US Bakers**, a r
 - Custom cake order form with flavor/size/message/photo upload.
 
 ## Assets
-- Real brand logo at `/app/frontend/public/us-bakers-logo.png` (pink circular badge) — used in header, footer and favicon.
-- Preloader chef-baking doodle at `/app/frontend/public/chef-doodle.jpeg` (minimal pink line-art on cream).
+- Real brand logo at `/app/frontend/public/us-bakers-logo.png` (pink circular badge) — used in header, footer, favicon, and preloader.
+- Preloader shows the logo only (scale-in animation + progress bar).
+
+## Fonts
+- Headings/display: **Fraunces** (warm, characterful serif — bakery-appropriate). Body: **Nunito Sans** (round, friendly). Replaced earlier Cormorant Garamond + Manrope.
+
+## Pages
+- Home, Shop (+category/search), Product detail, Custom Order, Cart, Checkout, Order Confirmation, **About** (`/about` — story, stats, craft, values, CTA), **Contact** (`/contact` — info cards, map image, enquiry form → POST /api/contact).
 
 ## Implemented
 - **2026-06-23 (v1)**: Editorial luxury homepage, catalog API (16 products / 4 categories), shop + detail + cart + COD checkout + confirmation, custom order form with photo upload.

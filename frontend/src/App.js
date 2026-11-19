@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import CustomOrder from "./pages/CustomOrder";
@@ -31,6 +33,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/shop/:category" element={<Shop />} />
               <Route path="/product/:slug" element={<ProductDetail />} />

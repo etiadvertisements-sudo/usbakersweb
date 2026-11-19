@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'serif'],
-        sans: ['Manrope', 'sans-serif'],
+        serif: ['Fraunces', 'serif'],
+        sans: ['"Nunito Sans"', 'sans-serif'],
       },
       colors: {
         rose: {
