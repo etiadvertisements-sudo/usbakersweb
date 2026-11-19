@@ -19,6 +19,10 @@ Build a "next-level", fully functional e-commerce website for **US Bakers**, a r
 - Cart + checkout (COD working; Razorpay pending keys).
 - Custom cake order form with flavor/size/message/photo upload.
 
+## Assets
+- Real brand logo at `/app/frontend/public/us-bakers-logo.png` (pink circular badge) — used in header, footer and favicon.
+- Preloader chef-baking doodle at `/app/frontend/public/chef-doodle.jpeg` (minimal pink line-art on cream).
+
 ## Implemented
 - **2026-06-23 (v1)**: Editorial luxury homepage, catalog API (16 products / 4 categories), shop + detail + cart + COD checkout + confirmation, custom order form with photo upload.
 - **2026-06-23 (v2)**: Theobroma-style e-commerce structure — hero promo carousel (3 auto-rotating slides), 8 categories, 38 products, coupon codes (USB500/800/1000/1500, COMBO15) with /api/coupons/validate, coupon applied in checkout (verified ₹850→₹800), fixed empty-cart redirect bug.

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ShoppingBag, Menu, X, Search, MapPin, Phone, Cake } from "lucide-react";
+import { ShoppingBag, Menu, X, Search, MapPin, Phone } from "lucide-react";
 import { useCart } from "../context/CartContext";
 
 const NAV_LINKS = [
@@ -45,10 +45,11 @@ export default function Navbar() {
       <div className="bg-mint shadow-sm border-b border-mint-dark/30">
         <div className="mx-auto flex h-16 items-center gap-4 px-4 md:h-[72px] md:px-8">
           <Link to="/" data-testid="logo-link" className="shrink-0">
-            <span className="inline-flex items-center gap-2 rounded-full bg-rose px-4 py-2 text-white shadow-md transition-transform duration-300 hover:scale-105">
-              <Cake size={17} className="shrink-0" />
-              <span className="font-serif text-lg font-bold leading-none tracking-tight">US Bakers</span>
-            </span>
+            <img
+              src="/us-bakers-logo.png"
+              alt="US Bakers — For Your Sweet Cravings"
+              className="h-12 w-12 rounded-full object-cover shadow-md transition-transform duration-300 hover:scale-105 md:h-14 md:w-14"
+            />
           </Link>
 
           <form onSubmit={submitSearch} className="mx-auto hidden w-full max-w-md md:block">

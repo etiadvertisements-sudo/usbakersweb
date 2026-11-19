@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Phone, MapPin, Mail, Cake } from "lucide-react";
+import { Instagram, Facebook, Phone, MapPin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -7,10 +7,11 @@ export default function Footer() {
       <div className="px-6 pt-16 pb-8 md:px-12 lg:px-24">
         <div className="grid gap-12 md:grid-cols-4">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-rose px-4 py-2 text-white shadow-md">
-              <Cake size={16} />
-              <span className="font-serif text-lg font-bold">US Bakers</span>
-            </span>
+            <img
+              src="/us-bakers-logo.png"
+              alt="US Bakers — For Your Sweet Cravings"
+              className="h-20 w-20 rounded-full object-cover shadow-md"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/75">
               Artisan custom cakes, pastries, brownies & gift hampers — freshly baked daily in Pathankot.
             </p>

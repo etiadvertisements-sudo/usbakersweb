@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { CartProvider } from "./context/CartContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Preloader from "./components/Preloader";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -23,6 +24,7 @@ function App() {
   return (
     <ReactLenis root options={{ lerp: 0.09, smoothWheel: true }} ref={(l) => { window.lenis = l?.lenis || l; }}>
       <div className="App grain min-h-screen bg-cream">
+        <Preloader />
         <CartProvider>
           <BrowserRouter>
             <ScrollToTop />
