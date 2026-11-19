@@ -31,6 +31,8 @@ Build a "next-level", fully functional e-commerce website for **US Bakers**, a r
 
 - **2026-06-23 (v4)**: About page rewritten with the real founder story (COVID 2020, Urvashi Sikka, home-kitchen beginnings, repeated cake trials, the "mmm… yummmm" moment) + attached watercolor founder illustration (`/public/founder-illustration.webp`). Added home-page parallax cake-categories section (framer-motion useScroll parallax, full-bleed rows: Speciality Cakes / Brownies & Bakes / Gifting). Testimonials heading changed to "Loved by many, and still counting". Added `/app/DEPLOY_HOSTINGER_VPS.md` (IP-only VPS deploy guide).
 
+- **2026-06-23 (v5)**: Added 1-click VPS deployment script (`/app/deploy.sh`) tailored to `/var/www/usbakers/usbakersweb` with automatic public IP detection, systemd service setup, Nginx reverse proxy on port 80, MongoDB config, and React build automation + quickstart guide at `/app/VPS_QUICKSTART.md`.
+
 ## Implemented (earlier)
 - **2026-06-23 (v1)**: Editorial luxury homepage, catalog API (16 products / 4 categories), shop + detail + cart + COD checkout + confirmation, custom order form with photo upload.
 - **2026-06-23 (v2)**: Theobroma-style e-commerce structure — hero promo carousel (3 auto-rotating slides), 8 categories, 38 products, coupon codes (USB500/800/1000/1500, COMBO15) with /api/coupons/validate, coupon applied in checkout (verified ₹850→₹800), fixed empty-cart redirect bug.
